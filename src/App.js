@@ -64,21 +64,24 @@ function App() {
 export default App;
 
 const Contanier = styled.div`
-  width: 100%;
+  width: 1180px;
   height: 100%;
+
+  /* border: 1px solid red; */
   /* margin: 20px auto; */
 
   position: relative;
 
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 
   user-select: none;
 `;
 
 const InnerContainer = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin: 20px auto;
 
   display: flex;

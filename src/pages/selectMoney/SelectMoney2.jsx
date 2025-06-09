@@ -163,7 +163,7 @@ export const PasswordCont = styled.div`
 
 export const PLeftCont = styled.div`
   width: 50%;
-  height: 675px;
+  height: 640px;
 
   border: 1px solid #999;
   background: #f8fbf6;
@@ -171,8 +171,8 @@ export const PLeftCont = styled.div`
 `;
 
 export const PRightCont = styled.div`
-  width: 33%;
-  height: 675px;
+  width: 35%;
+  height: 640px;
 
   display: flex;
   justify-content: space-between;
@@ -183,7 +183,7 @@ export const PRightCont = styled.div`
 
   /* border: 1px solid #999; */
   background: #f8fbf6;
-  padding: 4px 0 0 80px;
+  padding: 4px 0 0 70px;
 `;
 
 export const Title = styled.div`
@@ -216,11 +216,11 @@ export const Content = styled.div`
 
   border: 1px solid gray;
 
-  height: 480px;
-  @media (max-width: 768px) {
+  height: 445px;
+  /* @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
-  }
+  } */
 `;
 
 export const Paragraph2 = styled.div`
@@ -229,12 +229,12 @@ export const Paragraph2 = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  gap: 20px;
+  gap: 10px;
 
   margin-bottom: 20px;
 
   > div {
-    font-size: 35px;
+    font-size: 30px;
   }
 `;
 
@@ -248,27 +248,27 @@ export const Paragraph4 = styled.div`
   margin-top: 0px;
 
   > div {
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
 
     > input {
-      width: 180px;
+      width: 130px;
       height: 40px;
       border: 1px solid gray;
 
       text-align: end;
-      font-size: 40px;
+      font-size: 30px;
       padding: 0 10px;
     }
   }
 `;
 
 export const PasswordBtnBlock = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #2e7d32, #0d470f); /* 녹색 그라데이션 */
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -282,8 +282,8 @@ export const PasswordBtnBlock = styled.div`
 `;
 
 export const PasswordBtn = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #2e7d32, #0d470f); /* 녹색 그라데이션 */
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -295,8 +295,8 @@ export const PasswordBtn = styled.div`
 `;
 
 export const PasswordBtn3 = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #e15200, #ab0900);
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -310,7 +310,7 @@ export const PasswordBtn3 = styled.div`
 
 export const PWParg = styled.div`
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
 
   display: flex;

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-const { WLeftCont, Title, Content, Paragraph2 } = require("pages/warning/Warning");
+const { Title } = require("pages/warning/Warning");
 
 const EndStage = () => {
   const [stage, setStage] = useState(0);
@@ -15,11 +16,11 @@ const EndStage = () => {
     isReceipt: useSelector((state) => state["homeReducer"].isReceipt),
   };
 
-  useEffect(() => {
-    if (!store.selectMoney) {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!store.selectMoney) {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   useEffect(() => {
     // 카드 받아주셈
@@ -47,7 +48,6 @@ const EndStage = () => {
       }, 5000);
     }
   }, [stage]);
-
   useEffect(() => {
     if (stage === 0 && store.noMoney) {
       setTimeout(() => {
@@ -66,7 +66,7 @@ const EndStage = () => {
               <div>잔액이 부족합니다. 카드를 받아 주십시오.</div>
               <div>처음부터 다시 거래 해주십시오.</div>
 
-              <img src={`${process.env.PUBLIC_URL}/images/getCard.png`} alt="" />
+              <img width={"80%"} src={`${process.env.PUBLIC_URL}/images/getCard.png`} alt="" />
             </Paragraph2>
           </Content>
         </React.Fragment>
@@ -80,8 +80,8 @@ const EndStage = () => {
               <div>현금을 세고 있습니다.</div>
               <div>잠시만 기다려 주십시오.</div>
               <img
-                width={"783px"}
-                height={"318px"}
+                width={"80%"}
+                // height={"318px"}
                 src={`${process.env.PUBLIC_URL}/images/waitCash.png`}
                 alt=""
               />
@@ -100,9 +100,13 @@ const EndStage = () => {
               <div>카드{store.isReceipt && "와 명세표"}를 받으시면</div>
               <div>현금(수표)이 나옵니다.</div>
               {store.isReceipt ? (
-                <img src={`${process.env.PUBLIC_URL}/images/getCardAndReceipt.png`} alt="" />
+                <img
+                  width={"80%"}
+                  src={`${process.env.PUBLIC_URL}/images/getCardAndReceipt.png`}
+                  alt=""
+                />
               ) : (
-                <img src={`${process.env.PUBLIC_URL}/images/getCard.png`} alt="" />
+                <img width={"80%"} src={`${process.env.PUBLIC_URL}/images/getCard.png`} alt="" />
               )}
             </Paragraph2>
           </Content>
@@ -119,7 +123,7 @@ const EndStage = () => {
                 받으십시오.
               </div>
               <div>잠시 후 개폐기가 닫힙니다.</div>
-              <img src={`${process.env.PUBLIC_URL}/images/getCash.png`} alt="" />
+              <img width={"80%"} src={`${process.env.PUBLIC_URL}/images/getCash.png`} alt="" />
             </Paragraph2>
           </Content>
         </React.Fragment>
@@ -141,3 +145,41 @@ const EndStage = () => {
 };
 
 export default EndStage;
+
+const WLeftCont = styled.div`
+  width: 100%;
+  height: 640px;
+
+  border: 1px solid #999;
+  background: #f8fbf6;
+  padding: 4px;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 50px 40px;
+  margin-top: 5px;
+
+  border: 1px solid gray;
+
+  height: 445px;
+`;
+
+const Paragraph2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 20px;
+
+  > div {
+    font-size: 40px;
+  }
+`;

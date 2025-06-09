@@ -8,11 +8,9 @@ import {
   Content,
   Paragraph2,
   Paragraph4,
-  PasswordBtn,
   PasswordBtnBlock,
   PasswordCont,
   PLeftCont,
-  PRightCont,
   PWParg,
   Title,
 } from "pages/selectMoney/SelectMoney2";
@@ -77,7 +75,7 @@ const Before = () => {
           <Title style={{ color: "black" }}>초기 금액 입력</Title>
           <Content>
             <Paragraph2>
-              <div style={{ fontSize: "50px", color: "blue" }}>ATM 훈련 프로그램</div>
+              <div style={{ fontSize: "35px", color: "blue" }}>ATM 훈련 프로그램</div>
             </Paragraph2>
             <Paragraph2>
               <div>만원권 단위로 설정 가능합니다.</div>
@@ -89,7 +87,8 @@ const Before = () => {
 
             <Paragraph4>
               <div style={{ color: "black", marginTop: "20px" }}>
-                <span style={{ color: "black" }}>잔ㅤㅤ액</span>: <input disabled value={cash} />
+                <span style={{ color: "black" }}>잔액</span>:{" "}
+                <input style={{ width: "80px" }} disabled value={cash} />
                 만원
               </div>
             </Paragraph4>
@@ -163,6 +162,35 @@ const Before = () => {
 
 export default Before;
 
+const PRightCont = styled.div`
+  width: 45%;
+  height: 640px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  /* border: 1px solid #999; */
+  background: #f8fbf6;
+  padding: 0 0 0 20px;
+`;
+
+const PasswordBtn = styled.div`
+  width: 105px;
+  height: 105px;
+  background: linear-gradient(to bottom, #2e7d32, #0d470f); /* 녹색 그라데이션 */
+  border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -170,7 +198,7 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 20px;
 
-  width: 100%;
+  width: 80%;
 `;
 
 export const MainButton = styled.div`

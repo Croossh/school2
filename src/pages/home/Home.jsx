@@ -49,7 +49,7 @@ const Home = () => {
             <MainBlockButton>
               <div>{setFontBySpan("계좌이체")}</div>
             </MainBlockButton>
-            <MainBlockButton style={{ flexDirection: "column", fontSize: "40px" }}>
+            <MainBlockButton style={{ flexDirection: "column", fontSize: "35px" }}>
               <div>{setFontBySpan("입금")}</div>
               <div>{setFontBySpan("무통장입금")}</div>
             </MainBlockButton>
@@ -74,13 +74,13 @@ const Home = () => {
             <MainBlockButton>
               <div>{setFontBySpan("통장정리")}</div>
             </MainBlockButton>
-            <MainBlockButton style={{ flexDirection: "column", fontSize: "40px" }}>
+            <MainBlockButton style={{ flexDirection: "column", fontSize: "35px" }}>
               <div>{setFontBySpan("국고/지방세")}</div>
               <div>{setFontBySpan("등록금/지로")}</div>
             </MainBlockButton>
-            <MainBlockButton style={{ flexDirection: "column", fontSize: "27px" }}>
+            <MainBlockButton style={{ flexDirection: "column", fontSize: "24px" }}>
               <div>{setFontBySpan("NH앱캐시")}</div>
-              <div>{setFontBySpan("NHㅤpay/삼성페이")}</div>
+              <div>{setFontBySpan("NHpay/삼성페이")}</div>
             </MainBlockButton>
             <MainBlockButton
               style={{
@@ -112,27 +112,33 @@ export const Container = styled.div`
 `;
 
 const LeftCont = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
 
   gap: 20px;
 `;
 
 const RightCont = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
 
   gap: 20px;
 `;
 
 const MiddleCont = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
 
   gap: 10px;
@@ -154,7 +160,7 @@ const Info = styled.div`
 `;
 
 const Info2 = styled.div`
-  width: 400px;
+  width: 90%;
   height: 430px;
 
   border: 3px double gray;
@@ -189,8 +195,8 @@ const Info2 = styled.div`
 `;
 
 export const MainButton = styled.div`
-  width: 280px;
-  height: 100px;
+  width: 70%;
+  height: 80px;
 
   background: linear-gradient(to bottom, #20a64c, #148c3c);
   border: 5px solid #d5eef9;
@@ -230,8 +236,8 @@ export const MainButton = styled.div`
 `;
 
 export const MainBlockButton = styled.div`
-  width: 280px;
-  height: 100px;
+  width: 70%;
+  height: 80px;
 
   background: linear-gradient(to bottom, #20a64c, #07902f);
   border: 5px solid #d5eef9;

@@ -127,6 +127,7 @@ const Password = () => {
               display: "flex",
               justifyContent: "space-between",
               width: "100%",
+              padding: "0 8px",
             }}
           >
             <PasswordBtn3 onClick={() => navgate("/cancel")}>
@@ -162,7 +163,7 @@ const PasswordCont = styled.div`
 
 const PLeftCont = styled.div`
   width: 50%;
-  height: 675px;
+  height: 640px;
 
   border: 1px solid #999;
   background: #f8fbf6;
@@ -170,11 +171,11 @@ const PLeftCont = styled.div`
 `;
 
 const PRightCont = styled.div`
-  width: 45%;
-  height: 675px;
+  width: 50%;
+  height: 660px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
@@ -215,11 +216,11 @@ const Content = styled.div`
 
   border: 1px solid gray;
 
-  height: 480px;
-  @media (max-width: 768px) {
+  height: 445px;
+  /* @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
-  }
+  } */
 `;
 
 const Paragraph2 = styled.div`
@@ -231,7 +232,7 @@ const Paragraph2 = styled.div`
   gap: 20px;
 
   > div {
-    font-size: 40px;
+    font-size: 30px;
   }
 `;
 
@@ -263,14 +264,14 @@ const Paragraph4 = styled.div`
   margin-top: 40px;
 
   > div {
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
 
     > input {
-      width: 280px;
+      width: 230px;
       height: 40px;
       border: 1px solid gray;
 
@@ -282,8 +283,8 @@ const Paragraph4 = styled.div`
 `;
 
 const PasswordBtnBlock = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #2e7d32, #0d470f); /* 녹색 그라데이션 */
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -297,8 +298,8 @@ const PasswordBtnBlock = styled.div`
 `;
 
 const PasswordBtn = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #2e7d32, #0d470f); /* 녹색 그라데이션 */
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -310,8 +311,8 @@ const PasswordBtn = styled.div`
 `;
 
 const PasswordBtn2 = styled.div`
-  width: 259px;
-  height: 120px;
+  width: 224px;
+  height: 105px;
   background: linear-gradient(to bottom, #2e7d32, #0d470f);
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;
@@ -323,8 +324,8 @@ const PasswordBtn2 = styled.div`
 `;
 
 const PasswordBtn3 = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 105px;
+  height: 105px;
   background: linear-gradient(to bottom, #e15200, #ab0900);
   border: 2px solid #cfd8dc; /* 옅은 회색 테두리 */
   border-radius: 12px;

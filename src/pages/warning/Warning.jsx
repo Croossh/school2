@@ -76,9 +76,9 @@ const Warning = () => {
 
         {stage === 2 && (
           <React.Fragment>
-            <WLeftCont>
+            <WLeftCont style={{ height: "640px" }}>
               <Title style={{ color: "black" }}>카드 정보 조회 중</Title>
-              <Content>
+              <Content style={{ height: "445px" }}>
                 <Paragraph2>
                   <div>카드의 정보를 확인하고 있습니다.</div>
                   <div>잠시만 기다려 주십시오.</div>
@@ -148,7 +148,7 @@ export const WarningCont = styled.div`
 
 export const WLeftCont = styled.div`
   width: 100%;
-  height: 675px;
+  height: 520px;
 
   border: 1px solid #999;
   background: #f8fbf6;
@@ -185,7 +185,7 @@ export const Content = styled.div`
 
   border: 1px solid gray;
 
-  height: 480px;
+  height: 325px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
@@ -194,7 +194,7 @@ export const Content = styled.div`
 
 export const TextBlock = styled.div`
   flex: 1;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 1.6;
 `;
 

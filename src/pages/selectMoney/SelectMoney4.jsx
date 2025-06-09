@@ -90,7 +90,7 @@ const SCont = styled.div`
 
 const SLeftCont = styled.div`
   width: 65%;
-  height: 675px;
+  height: 640px;
 
   border: 1px solid #999;
   background: #f8fbf6;
@@ -110,11 +110,11 @@ const Content = styled.div`
 
   border: 1px solid gray;
 
-  /* height: 480px; */
-  @media (max-width: 768px) {
+  height: 445px;
+  /* @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
-  }
+  } */
 `;
 
 const ConfirmBox = styled.div`

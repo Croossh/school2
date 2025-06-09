@@ -37,7 +37,7 @@ const SelectMoney3 = () => {
         <Content>
           <TextBlock>
             <Paragraph>
-              아래의 금액을 확인하시고 맞으면 확인 을 틀릴 경우에는 취소 를 눌러 주십시오.
+              아래의 금액을 확인하시고 맞으면 확인을 틀릴 경우에는 취소를 눌러 주십시오.
             </Paragraph>
           </TextBlock>
           <ConfirmBox>
@@ -94,7 +94,7 @@ const Content = styled.div`
 
   border: 1px solid gray;
 
-  /* height: 480px; */
+  height: 325px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 12px;
@@ -107,7 +107,8 @@ const ConfirmBox = styled.div`
 
   border: 1px solid gray;
 
-  margin-top: 40px;
+  margin-top: 20px;
+  padding: 20px 0;
 
   display: flex;
   justify-content: center;
@@ -122,7 +123,7 @@ const ConfirmBox = styled.div`
     align-items: center;
     flex-direction: column;
 
-    gap: 30px;
+    gap: 15px;
 
     font-size: 30px;
     font-weight: bold;

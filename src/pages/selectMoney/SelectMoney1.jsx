@@ -97,10 +97,11 @@ export const Container = styled.div`
   gap: 20px;
 
   width: 100%;
+  height: 100%;
 `;
 
 const LeftCont = styled.div`
-  height: 100%;
+  height: 640px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -109,7 +110,7 @@ const LeftCont = styled.div`
 `;
 
 const RightCont = styled.div`
-  height: 100%;
+  height: 640px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -118,7 +119,7 @@ const RightCont = styled.div`
 `;
 
 const MiddleCont = styled.div`
-  height: 100%;
+  height: 640px;
   display: flex;
   justify-content: center;
   align-items: center;
