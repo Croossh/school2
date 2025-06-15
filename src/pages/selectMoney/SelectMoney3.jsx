@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
-import { formatNumberWithComma, setFontBySpan } from "utils";
+import { DingButton, formatNumberWithComma, setFontBySpan } from "utils";
 import {
   BottomBtn,
   CancelBtn,
@@ -63,13 +63,19 @@ const SelectMoney3 = () => {
         </Content>
       </WLeftCont>
       <BottomBtn>
-        <CancelBtn onClick={() => navigate("/cancel")}>
+        <CancelBtn
+          onClick={() => {
+            navigate("/cancel");
+            DingButton();
+          }}
+        >
           <div>{setFontBySpan("취소")}</div>
         </CancelBtn>
         <OkBtn
           onClick={() => {
             store.calculateMoney();
             navigate("/select4");
+            DingButton();
           }}
         >
           <div>{setFontBySpan("확인")}</div>

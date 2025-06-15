@@ -3,7 +3,7 @@ import { isInsertToFalse, isInsertToTrue } from "pages/cancel/cancelSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { setFontBySpan } from "utils";
+import { DingButton, setFontBySpan } from "utils";
 import { v4 } from "uuid";
 
 const Password = () => {
@@ -104,21 +104,40 @@ const Password = () => {
               );
             } else {
               return (
-                <PasswordBtn key={v4()} onClick={clickPassword}>
+                <PasswordBtn
+                  key={v4()}
+                  onClick={() => {
+                    clickPassword();
+                    DingButton();
+                  }}
+                >
                   <PWParg>{item}</PWParg>
                 </PasswordBtn>
               );
             }
           })}
-          <PasswordBtn2 onClick={() => setNumberArray(insertImages(numbers, symbols))}>
+          <PasswordBtn2
+            onClick={() => {
+              setNumberArray(insertImages(numbers, symbols));
+              DingButton();
+            }}
+          >
             <PWParg>재배열</PWParg>
           </PasswordBtn2>
-          <PasswordBtn onClick={removePassword}>
+          <PasswordBtn
+            onClick={() => {
+              removePassword();
+              DingButton();
+            }}
+          >
             <PWParg>←</PWParg>
           </PasswordBtn>
           <PasswordBtn
             style={{ background: "linear-gradient(to bottom, #f29000, #ec6500)" }}
-            onClick={clearPassword}
+            onClick={() => {
+              clearPassword();
+              DingButton();
+            }}
           >
             <PWParg>정정</PWParg>
           </PasswordBtn>
@@ -130,11 +149,21 @@ const Password = () => {
               padding: "0 8px",
             }}
           >
-            <PasswordBtn3 onClick={() => navgate("/cancel")}>
+            <PasswordBtn3
+              onClick={() => {
+                navgate("/cancel");
+                DingButton();
+              }}
+            >
               <PWParg>취소</PWParg>
             </PasswordBtn3>
             {password.length > 3 ? (
-              <PasswordBtn onClick={() => navgate("/select1")}>
+              <PasswordBtn
+                onClick={() => {
+                  navgate("/select1");
+                  DingButton();
+                }}
+              >
                 <PWParg>확인</PWParg>
               </PasswordBtn>
             ) : (

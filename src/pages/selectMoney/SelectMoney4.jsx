@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
-import { formatNumberWithComma, setFontBySpan } from "utils";
+import { DingButton, formatNumberWithComma, setFontBySpan } from "utils";
 import { CancelBtn, OkBtn, Paragraph, TextBlock, Title } from "pages/warning/Warning";
 import { PriceBtn } from "./SelectMoney1";
 import { receiptToTrue } from "pages/home/homeSilce";
@@ -64,11 +64,17 @@ const SelectMoney4 = () => {
           onClick={() => {
             store.receiptToTrue();
             navigate("/end");
+            DingButton();
           }}
         >
           <div>{setFontBySpan(" 예 ")}</div>
         </PriceBtn>
-        <PriceBtn onClick={() => navigate("/end")}>
+        <PriceBtn
+          onClick={() => {
+            navigate("/end");
+            DingButton();
+          }}
+        >
           <div>{setFontBySpan("아니요")}</div>
         </PriceBtn>
       </SideBtn>

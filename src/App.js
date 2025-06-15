@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Router from "./router";
 import styled, { keyframes } from "styled-components";
@@ -11,6 +11,7 @@ import { v4 } from "uuid";
 function App() {
   const navigate = useNavigate();
   const [clicks, setClicks] = useState([]);
+  const audioRef = useRef(null);
 
   const store = {
     //state
@@ -43,11 +44,28 @@ function App() {
     );
   };
 
-  // useEffect(() => {
-  //   if (!store.selectShowArray.length > 0) {
-  //     navigate("/");
-  //   }
-  // }, []);
+  useEffect(() => {
+    // if (!store.selectShowArray.length > 0) {
+    //   navigate("/");
+    // }
+
+    const audio = new Audio("/sounds/ding.mp3");
+
+    const handleClick = (e) => {
+      if (e.target.tagName.toLowerCase() === "button") {
+        // play()는 try-catch로 감싸는 게 안정적
+        try {
+          audio.currentTime = 0;
+          audio.play();
+        } catch (err) {
+          console.warn("Audio play failed:", err);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   return (
     <Contanier className="App" onClick={handleClick}>

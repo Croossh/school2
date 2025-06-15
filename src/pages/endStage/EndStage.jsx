@@ -22,14 +22,33 @@ const EndStage = () => {
   //   }
   // }, []);
 
+  async function playAudioNTimes(src, times) {
+    for (let i = 0; i < times; i++) {
+      await playOnce(src);
+    }
+  }
+
+  function playOnce(src) {
+    return new Promise((resolve) => {
+      const audio = new Audio(src);
+      audio.addEventListener("ended", resolve, { once: true });
+      audio.play();
+    });
+  }
+
   useEffect(() => {
-    // 카드 받아주셈
+    // 돈세는중
     if (stage === 0 && !store.noMoney) {
+      setTimeout(() => {
+        const audio = new Audio("/sounds/counting.mp3");
+        audio.play();
+      }, 1000);
+
       setTimeout(() => {
         setStage(1);
       }, 5000);
     }
-    // 돈 세는중임
+    // 카드 받으셈
     if (stage === 1) {
       setTimeout(() => {
         setStage(2);
@@ -37,6 +56,9 @@ const EndStage = () => {
     }
     // 돈 받으셈
     if (stage === 2) {
+      setTimeout(() => {
+        playAudioNTimes("/sounds/bell.mp3", 3);
+      }, 200);
       setTimeout(() => {
         setStage(3);
       }, 5000);
@@ -48,7 +70,9 @@ const EndStage = () => {
       }, 5000);
     }
   }, [stage]);
+
   useEffect(() => {
+    // 돈부족
     if (stage === 0 && store.noMoney) {
       setTimeout(() => {
         setStage(3);

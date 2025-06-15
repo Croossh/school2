@@ -3,7 +3,7 @@ import { isInsertToFalse, isInsertToTrue } from "pages/cancel/cancelSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { setFontBySpan } from "utils";
+import { DingButton, setFontBySpan } from "utils";
 import { v4 } from "uuid";
 import { calculateMoney, changeSelectMoney } from "pages/home/homeSilce";
 
@@ -98,7 +98,10 @@ const SelectMoney2 = () => {
             return (
               <PasswordBtn
                 style={{ background: "linear-gradient(to bottom, #f29000, #ec6500)" }}
-                onClick={clearPassword}
+                onClick={() => {
+                  clearPassword();
+                  DingButton();
+                }}
                 key={v4()}
               >
                 <PWParg>{item}</PWParg>
@@ -106,13 +109,25 @@ const SelectMoney2 = () => {
             );
           } else if (item === "←") {
             return (
-              <PasswordBtn key={v4()} onClick={removeCash}>
+              <PasswordBtn
+                key={v4()}
+                onClick={() => {
+                  removeCash();
+                  DingButton();
+                }}
+              >
                 <PWParg>{item}</PWParg>
               </PasswordBtn>
             );
           } else {
             return (
-              <PasswordBtn key={v4()} onClick={() => clickCash(item)}>
+              <PasswordBtn
+                key={v4()}
+                onClick={() => {
+                  clickCash(item);
+                  DingButton();
+                }}
+              >
                 <PWParg>{item}</PWParg>
               </PasswordBtn>
             );
@@ -125,7 +140,12 @@ const SelectMoney2 = () => {
             width: "100%",
           }}
         >
-          <PasswordBtn3 onClick={() => navgate("/cancel")}>
+          <PasswordBtn3
+            onClick={() => {
+              navgate("/cancel");
+              DingButton();
+            }}
+          >
             <PWParg>취소</PWParg>
           </PasswordBtn3>
           {cash !== "0" ? (
@@ -134,6 +154,7 @@ const SelectMoney2 = () => {
                 store.changeSelectMoney(Number(cash));
                 store.calculateMoney();
                 navgate("/select4");
+                DingButton();
               }}
             >
               <PWParg>만원</PWParg>

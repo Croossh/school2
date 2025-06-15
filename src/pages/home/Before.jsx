@@ -15,6 +15,7 @@ import {
   Title,
 } from "pages/selectMoney/SelectMoney2";
 import { v4 } from "uuid";
+import { DingButton } from "utils";
 
 const Before = () => {
   const [cash, setCash] = useState("0");
@@ -100,7 +101,10 @@ const Before = () => {
               return (
                 <PasswordBtn
                   style={{ background: "linear-gradient(to bottom, #f29000, #ec6500)" }}
-                  onClick={clearPassword}
+                  onClick={() => {
+                    clearPassword();
+                    DingButton();
+                  }}
                   key={v4()}
                 >
                   <PWParg>{item}</PWParg>
@@ -111,7 +115,10 @@ const Before = () => {
                 <PasswordBtn
                   style={{ background: "linear-gradient(to bottom, #76a8fd, #00508a)" }}
                   key={v4()}
-                  onClick={removeCash}
+                  onClick={() => {
+                    removeCash();
+                    DingButton();
+                  }}
                 >
                   <PWParg>{item}</PWParg>
                 </PasswordBtn>
@@ -121,7 +128,10 @@ const Before = () => {
                 <PasswordBtn
                   style={{ background: "linear-gradient(to bottom, #76a8fd, #00508a)" }}
                   key={v4()}
-                  onClick={() => clickCash(item)}
+                  onClick={() => {
+                    clickCash(item);
+                    DingButton();
+                  }}
                 >
                   <PWParg>{item}</PWParg>
                 </PasswordBtn>
@@ -142,6 +152,7 @@ const Before = () => {
                   store.setInitMoney(Number(cash));
                   store.setFirstToFalse();
                   navigate("/");
+                  DingButton();
                 }}
               >
                 <PWParg>만원</PWParg>

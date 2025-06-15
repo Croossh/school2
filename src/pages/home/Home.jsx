@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { init, setFirstToFalse, setInitMoney } from "./homeSilce";
-import { setFontBySpan } from "utils";
+import { DingButton, setFontBySpan } from "utils";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,7 +41,14 @@ const Home = () => {
         <React.Fragment>
           <LeftCont>
             <MainButton>
-              <div onClick={() => navigate("/warning")}>{setFontBySpan("예금인출")}</div>
+              <div
+                onClick={() => {
+                  navigate("/warning");
+                  DingButton();
+                }}
+              >
+                {setFontBySpan("예금인출")}
+              </div>
             </MainButton>
             <MainBlockButton>
               <div>{setFontBySpan("예금조회")}</div>

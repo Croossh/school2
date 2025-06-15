@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { setFontBySpan } from "utils";
+import { DingButton, setFontBySpan } from "utils";
 
 const Warning = () => {
   const [stage, setStage] = useState(1);
@@ -64,11 +64,23 @@ const Warning = () => {
               </Content>
             </WLeftCont>
             <BottomBtn>
-              <CancelBtn onClick={() => navigate("/cancel")}>
+              <CancelBtn
+                onClick={() => {
+                  navigate("/cancel");
+                  DingButton();
+                }}
+              >
                 <div>{setFontBySpan("취소")}</div>
               </CancelBtn>
               <OkBtn>
-                <div onClick={() => setStage(2)}>{setFontBySpan("확인")}</div>
+                <div
+                  onClick={() => {
+                    setStage(2);
+                    DingButton();
+                  }}
+                >
+                  {setFontBySpan("확인")}
+                </div>
               </OkBtn>
             </BottomBtn>
           </React.Fragment>
@@ -120,11 +132,23 @@ const Warning = () => {
               </Content>
             </WLeftCont>
             <BottomBtn>
-              <CancelBtn onClick={() => navigate("/cancel")}>
+              <CancelBtn
+                onClick={() => {
+                  navigate("/cancel");
+                  DingButton();
+                }}
+              >
                 <div>{setFontBySpan("취소")}</div>
               </CancelBtn>
               <OkBtn>
-                <div onClick={() => navigate("/password")}>{setFontBySpan("확인")}</div>
+                <div
+                  onClick={() => {
+                    navigate("/password");
+                    DingButton();
+                  }}
+                >
+                  {setFontBySpan("확인")}
+                </div>
               </OkBtn>
             </BottomBtn>
           </React.Fragment>

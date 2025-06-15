@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setFontBySpan } from "utils";
+import { DingButton, setFontBySpan } from "utils";
 import { CancelBtn } from "pages/warning/Warning";
 import { changeSelectMoney } from "pages/home/homeSilce";
 
@@ -31,7 +31,10 @@ const SelectMoney1 = () => {
           if (i === 5) {
             return (
               <PriceBtn
-                onClick={() => navigate("/select2")}
+                onClick={() => {
+                  navigate("/select2");
+                  DingButton();
+                }}
                 style={{ background: "linear-gradient(to bottom, #7ab501, #397510)" }}
               >
                 <div>{setFontBySpan("기타금액")}</div>
@@ -43,6 +46,7 @@ const SelectMoney1 = () => {
                 onClick={() => {
                   store.changeSelectMoney(item);
                   navigate("/select3");
+                  DingButton();
                 }}
               >
                 <div>{setFontBySpan(` ${item} 만원`)}</div>
@@ -65,7 +69,12 @@ const SelectMoney1 = () => {
         {[30, 40, 50, 70, 100, ""].map((item, i) => {
           if (i === 5) {
             return (
-              <CancelBtn onClick={() => navigate("/cancel")}>
+              <CancelBtn
+                onClick={() => {
+                  navigate("/cancel");
+                  DingButton();
+                }}
+              >
                 <div>{setFontBySpan("취소")}</div>
               </CancelBtn>
             );
@@ -75,6 +84,7 @@ const SelectMoney1 = () => {
                 onClick={() => {
                   store.changeSelectMoney(item);
                   navigate("/select3");
+                  DingButton();
                 }}
               >
                 <div>{setFontBySpan(` ${item} 만원`)}</div>
