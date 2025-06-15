@@ -210,10 +210,6 @@ export const Content = styled.div`
   border: 1px solid gray;
 
   height: 325px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 12px;
-  }
 `;
 
 export const TextBlock = styled.div`

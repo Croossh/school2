@@ -34,9 +34,9 @@ const Cancel = () => {
           <Paragraph2>
             <div>거래가 취소 되었습니다.</div>
             <div>
-              {!store.isInsert && <span>카드를 회수하여 주시고 </span>}처음부터 다시 시작해주십시오.
+              {store.isInsert && <span>카드를 회수하여 주시고 </span>}처음부터 다시 시작해주십시오.
             </div>
-            {!store.isInsert && (
+            {store.isInsert && (
               <img src={`${process.env.PUBLIC_URL}/images/getCard.png`} width={"80%"} alt="" />
             )}
           </Paragraph2>
