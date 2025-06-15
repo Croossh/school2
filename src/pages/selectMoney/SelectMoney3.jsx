@@ -4,16 +4,7 @@ import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { DingButton, formatNumberWithComma, setFontBySpan } from "utils";
-import {
-  BottomBtn,
-  CancelBtn,
-  OkBtn,
-  Paragraph,
-  TextBlock,
-  Title,
-  WarningCont,
-  WLeftCont,
-} from "pages/warning/Warning";
+import { BottomBtn, CancelBtn, OkBtn, WarningCont } from "pages/warning/Warning";
 import { calculateMoney } from "pages/home/homeSilce";
 
 const SelectMoney3 = () => {
@@ -101,15 +92,11 @@ const Content = styled.div`
   border: 1px solid gray;
 
   height: 325px;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 12px;
-  }
 `;
 
 const ConfirmBox = styled.div`
   width: 100%;
-  height: 300px;
+  /* height: 300px; */
 
   border: 1px solid gray;
 
@@ -122,7 +109,7 @@ const ConfirmBox = styled.div`
   flex-direction: row;
 
   > div {
-    height: 100%;
+    /* height: 100%; */
 
     display: flex;
     justify-content: center;
@@ -159,4 +146,40 @@ const ConfirmBox = styled.div`
       align-items: center;
     }
   }
+`;
+
+const WLeftCont = styled.div`
+  width: 100%;
+  height: 520px;
+
+  border: 1px solid #999;
+  background: #f8fbf6;
+  padding: 4px;
+`;
+
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 70px;
+  background: linear-gradient(to right, #dcebf0, #dcebf0);
+  border: 1px solid gray;
+  color: red;
+
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+
+  padding: 8px;
+`;
+
+const TextBlock = styled.div`
+  flex: 1;
+  font-size: 30px;
+  line-height: 1.6;
+`;
+
+const Paragraph = styled.p`
+  margin: 0;
 `;
